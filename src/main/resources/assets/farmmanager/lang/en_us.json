@@ -1,0 +1,8 @@
+{
+    "dimension.farmmanager.farm": "Farmrealm",
+    "command.farmmanager.join.success": "Teleported to Farmrealm",
+    "command.farmmanager.join.already": "You are already in Farmrealm",
+    "command.farmmanager.quit.success": "Returned to your previous location",
+    "command.farmmanager.quit.error": "Could not find previous location; teleported to world spawn",
+    "command.farmmanager.quit.not_in_farm": "You are not in Farmrealm"
+}

@@ -1,0 +1,9 @@
+.gradle/
+build/
+*.zip
+AGENTS.md
+modrint.md
+.gradle
+.idea/
+*.iml
+out/

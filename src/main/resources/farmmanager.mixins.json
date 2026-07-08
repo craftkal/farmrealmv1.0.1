@@ -1,0 +1,9 @@
+{
+    "required": true,
+    "package": "com.farmmanager.mixin",
+    "compatibilityLevel": "JAVA_25",
+    "mixins": ["PlayerTickMixin", "MappedRegistryAccessor", "CropBlockMixin", "SugarCaneMixin"],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

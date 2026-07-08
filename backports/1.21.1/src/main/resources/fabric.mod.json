@@ -1,0 +1,21 @@
+{
+    "schemaVersion": 1,
+    "id": "farmmanager",
+    "version": "${version}",
+    "name": "Farmrealm",
+    "description": "Custom Farm dimension with accelerated growth, item rain, and command-controlled mob spawning",
+    "authors": ["craftkal"],
+    "license": "Apache-2.0",
+    "icon": "assets/farmmanager/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": ["com.farmmanager.FarmManagerMod"]
+    },
+    "mixins": ["farmmanager.mixins.json"],
+    "depends": {
+        "fabricloader": ">=0.15.11",
+        "fabric-api": "*",
+        "minecraft": ">=1.21.1",
+        "java": ">=21"
+    }
+}

@@ -1,0 +1,56 @@
+plugins {
+    id "fabric-loom" version "1.15-SNAPSHOT"
+    id "java"
+}
+
+version = "1.0.0"
+
+base {
+    archivesName = "farmrealm"
+}
+
+repositories {
+    maven { url "https://maven.fabricmc.net/" }
+    mavenCentral()
+}
+
+loom {
+    noIntermediateMappings()
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:26.1.2"
+    mappings loom.layered {
+        mappings(file("src/main/resources/identity_mappings.tiny"))
+    }
+    modImplementation "net.fabricmc:fabric-loader:0.19.3"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.154.2+26.1.2"
+}
+
+java {
+    withSourcesJar()
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+    options.release = 25
+}
+
+processResources {
+    inputs.property "version", project.version
+    filteringCharset "UTF-8"
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+jar {
+    from("LICENSE")
+}
+
+tasks.named("remapSourcesJar").configure {
+    enabled = false
+}
